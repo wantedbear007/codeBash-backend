@@ -1,13 +1,4 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -28,25 +19,22 @@ app.get("/", (req, res) => {
 });
 app.post("/upload", Handlers_1.default.uploadSnippet);
 app.get("/allSubmissions", Handlers_1.default.getCodes);
-function startServices() {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            yield exports.prismaInstance.$connect();
-        }
-        catch (err) {
-            console.log("error occurred \n", err);
-            process.exit(1);
-        }
-        finally {
-            console.log("database is connected !");
-            // startServices();
-            // Routes.startServices();
-            exports.prismaInstance.$disconnect();
-        }
-    });
-}
+// async function startServices(): Promise<void> {
+//   try {
+//     await prismaInstance.$connect();
+//   } catch (err: any) {
+//     console.log("error occurred \n", err);
+//     process.exit(1);
+//   } finally {
+//     console.log("database is connected !");
+//     // startServices();
+//     // Routes.startServices();
+//     prismaInstance.$disconnect();
+//   }
+// }
 app.listen(port, () => {
     return console.log(`start listening at port ${port}`);
 });
-startServices();
+// startServices();
 exports.default = app;
+//# sourceMappingURL=index.js.map

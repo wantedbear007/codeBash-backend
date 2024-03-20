@@ -18,19 +18,19 @@ app.get("/", (req: Request, res: Response) => {
 app.post("/upload", Operations.uploadSnippet);
 app.get("/allSubmissions", Operations.getCodes);
 
-async function startServices(): Promise<void> {
-  try {
-    await prismaInstance.$connect();
-  } catch (err: any) {
-    console.log("error occurred \n", err);
-    process.exit(1);
-  } finally {
-    console.log("database is connected !");
-    // startServices();
-    // Routes.startServices();
-    prismaInstance.$disconnect();
-  }
-}
+// async function startServices(): Promise<void> {
+//   try {
+//     await prismaInstance.$connect();
+//   } catch (err: any) {
+//     console.log("error occurred \n", err);
+//     process.exit(1);
+//   } finally {
+//     console.log("database is connected !");
+//     // startServices();
+//     // Routes.startServices();
+//     prismaInstance.$disconnect();
+//   }
+// }
 
 app.listen(port, () => {
   return console.log(`start listening at port ${port}`);
