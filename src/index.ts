@@ -36,6 +36,6 @@ app.listen(port, () => {
   return console.log(`start listening at port ${port}`);
 });
 
-startServices();
+// startServices();
 
 export default app;
