@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { prismaInstance } from "../app";
+import { prismaInstance } from "..";
 import codeModel from "../models/codeModel";
 
 export default class Operations {

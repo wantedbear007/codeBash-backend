@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "compile": "tsc",
-    "start": "node dist/app",
+    "start": "node dist/index",
     "build": "tsc -p .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"node ./dist/app.js\""
+    "dev": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"node ./dist/index.js\""
   },
   "keywords": [],
   "author": "",

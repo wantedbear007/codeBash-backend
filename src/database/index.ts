@@ -1,4 +1,4 @@
-import { prismaInstance } from "../app";
+import { prismaInstance } from "..";
 
 export enum DatabaseResponses {
   operationFailed,
