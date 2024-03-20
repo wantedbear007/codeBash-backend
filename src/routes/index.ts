@@ -5,13 +5,17 @@ const app = express();
 app.use(express.json());
 console.log("working !");
 
-export default class Routes {
-  static startServices(): void {
-    app.post("/upload", Operations.uploadSnippet);
-    app.get("/allSubmissions", Operations.getCodes);
 
-    app.listen(8080, () => {
-      console.log("you can start listening at http://127.0.0.1:8080");
-    });
-  }
-}
+app.get("/", (req: Request, res: Response) =>  {
+  res.status(200).json({
+    msg: "api working !"
+  })
+})
+app.post("/upload", Operations.uploadSnippet);
+app.get("/allSubmissions", Operations.getCodes);
+
+// app.listen(8080, () => {
+//   console.log("you can start listening at http://127.0.0.1:8080");
+// });
+
+export default app;
